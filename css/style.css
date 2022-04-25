@@ -94,9 +94,19 @@ body {
   text-decoration: none;
   cursor: pointer;
 }
-.header .nav li:hover {
-  text-decoration: underline;
+.header .nav li::after {
+  background-color: rgb(4, 4, 238);
+  margin-top: 3px;
+  transition: 1s;
+  content: "";
+  width: 0;
+  height: 3px;
+  display: block;
 }
+.header .nav li:hover::after {
+  width: 100%;
+}
+
 /* End of header */
 
 .first-section {
@@ -244,14 +254,32 @@ body {
   transition: 0.5s;
   /* transition-delay: 0.1s; */
 }
+.features .features-content .f-content:hover .details-desc{
+  top: 0px;
+  transition: 0.5s;
+  transition-delay: 0.3s;
+
+}
 .features .features-content .f-content .details-desc .details-title {
-  transition: top 1s, opacity 0.5s;
+  text-transform: uppercase;
+  display: block;
+  color: #6195ff;
+  font-size: 16px;
+  position: relative;
+  top: 10px;
+
+}
+.features .features-content .f-content:hover .details-title {
+  top: 0;
+  transition: 0.5s;
 }
 .features .features-content .f-content .details-desc {
+  font-size: 20px;
   color: #fff;
-  margin: 10px 0;
+  margin: 5px 0 18px 0;
   transition-delay: 0.4s;
-  margin-bottom: 15px;
+  position: relative;
+  top: 15px;
 }
 
 .features .features-content .f-content a {
@@ -491,6 +519,12 @@ body {
   line-height: 1.4;
   margin-bottom: 20px;
 }
+.customers .detail .customer-details {
+  margin-right: 34px;
+}
+.customers .detail .customer2 {
+  margin-right: 65px;
+}
 .customers img {
   border-radius: 50%;
   position: absolute;
@@ -507,10 +541,9 @@ body {
   color: #6195ff;
 }
 .customers p {
-  text-align: center;
   width: 80%;
   font-size: 13px;
-  margin-top: 50px;
+  text-align: left;
   margin-left: 60px;
 }
 /* End of customers section */
